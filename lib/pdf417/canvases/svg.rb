@@ -8,7 +8,6 @@ module PDF417
         @doc = REXML::Document.new
         @doc.add(REXML::XMLDecl.new(1.0, 'UTF-8'))
         svg = REXML::Element.new('svg')
-        puts (  {'xmlns' => 'http://www.w3.org/2000/svg', 'version' =>'1.1' }.merge(attributes))
         svg.add_attributes(({'xmlns' => 'http://www.w3.org/2000/svg', 'version' =>'1.1' }).merge(attributes))
         @doc.add(svg)
       end
