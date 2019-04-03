@@ -22,7 +22,7 @@ module PDF417
     columns = options[:columns] || 5
     security_level = options[:security_level] || 0
 
-    config = BarcodeConfig.new(message: message, columns: columns, security_level: 0)
+    config = BarcodeConfig.new(message: message, columns: columns, security_level: security_level)
     high_encoder = HighLevelEncoder.new(config)
     low_encoder = LowLevelEncoder.new(high_encoder.encode)
     painter = BarcodePainter.new(low_encoder.encode, Canvases::SVG.new)
