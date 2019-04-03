@@ -24,7 +24,7 @@ module PDF417
     config = BarcodeConfig.new(message: message, columns: columns, security_level: security_level)
     high_encoder = HighLevelEncoder.new(config)
     low_encoder = LowLevelEncoder.new(high_encoder.encode)
-    painter = BarcodePainter.new(low_encoder.encode, Canvases::SVG.new)
+    painter = BarcodePainter.new(low_encoder.encode, Canvases::SVG.new(options[:svg_attributes]))
     painter.paint
     painter.canvas
   end

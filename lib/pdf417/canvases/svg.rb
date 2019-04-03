@@ -3,11 +3,13 @@ require 'rexml/document'
 module PDF417
   module Canvases
     class SVG
-      def initialize
+      def initialize(attributes={})
+        attributes ||= {}
         @doc = REXML::Document.new
         @doc.add(REXML::XMLDecl.new(1.0, 'UTF-8'))
         svg = REXML::Element.new('svg')
-        svg.add_attributes('xmlns' => 'http://www.w3.org/2000/svg', 'version' => '1.1')
+        puts (  {'xmlns' => 'http://www.w3.org/2000/svg', 'version' =>'1.1' }.merge(attributes))
+        svg.add_attributes(({'xmlns' => 'http://www.w3.org/2000/svg', 'version' =>'1.1' }).merge(attributes))
         @doc.add(svg)
       end
 

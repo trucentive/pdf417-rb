@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name         = 'pdf417-rb'
-  s.version      = '0.0.2'
+  s.version      = '0.0.3'
   s.date         = '2019-04-02'
   s.platform     = Gem::Platform::RUBY
   s.summary      = "A Ruby PDF417 barcode encoder gem"
