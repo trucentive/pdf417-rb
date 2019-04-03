@@ -1,5 +1,5 @@
 lib = File.expand_path(__dir__)
-puts lib
+
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'set'
@@ -18,7 +18,6 @@ require 'pdf417/canvases/svg'
 module PDF417
 
   def self.generate(message, options={})
-
     columns = options[:columns] || 5
     security_level = options[:security_level] || 0
 
