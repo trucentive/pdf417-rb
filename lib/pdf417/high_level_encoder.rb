@@ -7,11 +7,11 @@ module PDF417
     end
 
     def encode
-      compact_message(config.message)
-      .yield_self(&method(:padding))
-      .yield_self(&method(:length_descriptor))
-      .yield_self(&method(:error_correction))
-      .yield_self { |codewords| BarcodeMatrix.new(codewords, config) }
+      m = compact_message(config.message)
+      m = padding(m)
+      m = length_descriptor(m)
+      m = error_correction(m)
+      BarcodeMatrix.new(m, config)
     end
 
     private
